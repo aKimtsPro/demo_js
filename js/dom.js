@@ -1,8 +1,14 @@
 
 function writeProps( obj ){
-    const p = document.getElementById('text-here');
+    const div = document.getElementById('text-here');
     for(prop in obj){
-        p.innerHTML += '<p class="truc">key: ' + prop + ' | value: '+ obj[prop] + '</p>'
+        const p = document.createElement('p');
+        p.innerText = 'key: ' + prop + ' | value: '+ obj[prop];
+        p.classList.add('truc');
+        p.onclick = () => alert('salut');
+        p.addEventListener('click', () => div.removeChild(p))
+        p.addEventListener('click', (event) => console.log(event) )
+        div.appendChild(p);
     }
 }
 
@@ -53,16 +59,46 @@ func = function (){
 func = () => {
     alert('3sec se sont passées');
 }
-// setTimeout( func , 3000 );
 
+// setTimeout( func , 3000 );
 const timeout = setTimeout( () => alert('3sec se sont passées'), 3000 );
 function endTimeout(){
     clearTimeout( timeout );
     console.log('timeout averted')
 }
+endTimeout();
 
 const interval =  setInterval( () => alert('3sec se sont passées'), 3000 );
 function endInterval(){
     clearInterval( interval );
     console.log('interval stopped')
 }
+endInterval();
+
+
+// Manip CSS
+let blue = false;
+let int = setInterval( () => {
+    div.style.border = blue ? "3px dashed red" : "3px dashed blue";
+    blue = !blue;
+} ,2000)
+clearInterval(int);
+
+blue = false;
+const changeColor = () => {
+    div.classList.remove( blue ? 'blue-bordered' : 'red-bordered' );
+    div.classList.add( blue ? 'red-bordered' : 'blue-bordered' );
+    blue = !blue;
+}
+int = setInterval( changeColor , 2000)
+clearInterval(int);
+
+// console.log( getComputedStyle(div) )
+
+
+
+
+
+
+
+

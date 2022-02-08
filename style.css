@@ -1,0 +1,7 @@
+.red-bordered {
+    border: 3px dashed red;
+}
+
+.blue-bordered {
+    border: 3px dotted blue;
+}
