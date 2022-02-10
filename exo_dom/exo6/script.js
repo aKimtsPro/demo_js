@@ -22,7 +22,7 @@ function addColumn(){
             cellule = document.createElement('td');
             const input = document.createElement('input');
 
-            input.onchange = () => totalColumn(lines[i].children.length);
+            input.onchange = () => totalColumn(lines[i].children.length - 1);
             
             cellule.appendChild(input);
         }
@@ -58,6 +58,9 @@ function totalColumn(index){
                 .firstElementChild
                 .children[index]
                 .firstElementChild;
+
+    
+    console.log(inputTotal);
 
     for(let i = 0; i < lines.length ; i++){
         const input = lines[i].children[index].firstElementChild;
