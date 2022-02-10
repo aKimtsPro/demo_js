@@ -1,0 +1,9 @@
+#table-head, #table-foot {
+    background-color: rgb(58, 118, 136);
+    color: white;
+}
+
+table, td, tr, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}

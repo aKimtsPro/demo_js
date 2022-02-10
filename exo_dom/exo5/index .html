@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Description produits</h1>
+
+    <table>
+        <tr>
+            <th>nom</th>
+            <th>prix</th>
+            <th>action</th>
+        </tr>
+        <tr>
+            <td>chaise</td>
+            <td>25</td>
+            <td><button onclick="addToCart(this)" >ajout</button></td>
+        </tr>
+        <tr>
+            <td>table</td>
+            <td>150</td>
+            <td><button onclick="addToCart(this)">ajout</button></td>
+        </tr>
+        <tr>
+            <td>meuble</td>
+            <td>250</td>
+            <td><button onclick="addToCart(this)">ajout</button></td>
+        </tr>
+    </table>
+
+    <h1>Panier</h1>
+
+    <table id="panier">
+    </table>
+    <input type="text" id="total" disabled value="0">
+    
+    <script src="./script.js"></script>
+
+</body>
+</html>
